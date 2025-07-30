@@ -100,13 +100,17 @@ footer img {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#shareButton:hover  {
+#shareButton svg {
+    fill: #48556a;
+}
+
+#shareButton:hover {
     cursor: pointer;
     background-color: #6d7f97;
 }   
 
-#share-icon {
-    fill: #ecf2f8;
+#shareButton:hover svg {
+    background-color: #ecf2f8;
 }
 
 .hidden {
