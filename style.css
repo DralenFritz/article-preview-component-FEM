@@ -1,0 +1,289 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 0.8125em; /* 13px */
+    background-color: #ecf2f8;
+    font-family: "Manrope", sans-serif;
+}
+
+.container {
+    margin: 12% 5.5%;
+    border-radius: 0.65rem;
+    overflow: hidden;
+    box-shadow: 2px 4px 18px -7px rgba(0,0,0,0.4);
+    background-color: #ffffff;
+}
+
+header {
+    height: 210px;
+    overflow: hidden;
+}
+
+header img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+main {
+    padding: 1.2rem 2.2rem;
+}
+
+main h2 {
+    margin-top: 1.5rem;
+    color: #48556a;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+main p {
+    margin-top: 1rem;
+    line-height: 1.5;
+    color: #6d7f97;
+    font-weight: 500;
+    font-size: 1.02rem;
+}
+
+footer {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.2rem;
+}
+
+footer img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.footer-text {
+    margin-left: 0.8rem;
+    line-height: 1.5;
+}
+
+.footer-text h3 {
+    color: #48556a;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+}
+
+#date {
+    color: #9eafc2;
+}
+
+.share-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#shareButton {
+    border: none;
+    background-color: #ecf2f8;
+    width: 2rem;
+    padding: 0.35rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#shareButton:hover  {
+    cursor: pointer;
+    background-color: #6d7f97;
+}   
+
+#share-icon {
+    fill: #ecf2f8;
+}
+
+.hidden {
+    display: none !important;
+}
+
+footer.active {
+    background-color: #48556a;
+
+    .share-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 35%;
+    }
+
+    .share-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .icons {
+        display: flex;
+        gap: 0.9rem;
+        align-items: baseline;
+    }
+
+    #share-text {
+        letter-spacing: 0.6rem;
+        font-size: 0.9rem;
+        color: #9eafc2;
+    }
+
+    .icons svg:hover {
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 576px) {
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .container {
+        display: flex;
+        margin: 0 5%;
+        max-width: 700px;
+        width: 100%;  
+        overflow: visible;
+    }
+
+    header {
+        flex-basis: 40%;
+        height: auto;
+        min-height: 270px;
+    }
+
+    header img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: left;
+        border-top-left-radius: 0.6rem;
+        border-bottom-left-radius: 0.6rem;
+    }
+
+    main h2 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        flex-basis: 60%;
+    }
+
+    footer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0.2rem;
+        margin-bottom: 0.5rem;
+        padding: 0 2.2rem;
+        width: 100%;
+    }
+
+    .avatar .hidden {
+        display: none;
+    }
+
+    .hidden {
+        display: flex;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .share-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1.2rem;
+        width: auto;
+    }
+
+    .share-menu {
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.2rem;
+        bottom: 180%;
+        left: 60%;
+        background-color: #48556a;
+        padding: 1.2rem 2.9rem;
+        border-radius: 0.8rem;
+        transform: translateX(-50%);
+        z-index: 5;
+        box-shadow: -1px 3px 5px 1px rgba(0,0,0,0.15);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .share-menu::after {
+        content: "";
+        position: absolute;
+        top: 98%; 
+        left: 50%;
+        margin-left: -5px;
+        border-width: 13px;
+        border-style: solid;
+        border-color: #48556a transparent transparent transparent;
+        transform: translateX(-50%);
+    }
+
+    .share-menu.hidden {
+        display: flex;
+        opacity: 0;
+        pointer-events: none;
+    }
+ 
+    #share-text {
+        letter-spacing: 0.5rem;
+        font-size: 0.9rem;
+        color: #9eafc2;
+    }
+
+    .icons {
+        display: flex;
+        gap: 1.2rem;
+    }
+
+    #shareButton {
+        position: relative;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    footer.active {
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer.active .share-menu {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    footer.active .share-wrapper {
+        justify-content: flex-end;
+    }
+   
+}
